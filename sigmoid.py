@@ -5,7 +5,7 @@ def sigmoid(x):
 def sigmoidprime(x):
     return sigmoid(x)*(1-sigmoid(x))
 
-if(False):
+if(__name__="__main__"):
     line = np.array([x for x in range(-10,10)])
 
     plt.plot(line,sigmoid(line))
