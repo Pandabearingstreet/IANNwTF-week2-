@@ -27,6 +27,8 @@ class MLP():
         self.hiddenlayerDeltas = [
             outputDelta * self.output[0].get_weights()[i] * s.sigmoidprime(np.append([1],self.input) @ self.hiddenlayer[i].get_weights())
             for i in range(4)]
-
+        for i, delta in enumerate(self.hiddenlayerDeltas):
+            self.hiddenlayer[i].update(delta)
+        
     def get_prediction(self):
         return self.prediction
